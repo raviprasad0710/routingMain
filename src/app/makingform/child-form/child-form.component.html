@@ -1,0 +1,74 @@
+<button type="button" lass="btn btn-primary" #buttonToBeClicked data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+  hidden>
+  open model
+</button>
+
+
+<div class="modal fade" id="staticBackdrop" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Add New Member</h2>
+        <button type="button" (click)="closeForm()" class="btn-close" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="loadform" (ngSubmit)="submitform()">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              formControlName="f">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            <span style="color:red" *ngIf="loadform.get('f')?.invalid&&loadform.get('f').touched">this is
+              required</span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              formControlName="l">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            <span style="color:red" *ngIf="loadform.get('l')?.invalid&&loadform.get('l').touched">this is
+              required</span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              formControlName="e">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            <span style="color:red" *ngIf="loadform.get('e')?.invalid&&loadform.get('e').touched">this is
+              required</span>
+            <!-- <span style="color:red" *ngIf="loadform.get('email')?.valid&&loadform.get('email').touched">ENTER valid email</span> -->
+            <br>
+            <div class="mb-3 roww">
+              <label>Select Gender:</label>&nbsp;
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" formControlName="g" value="male">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Male
+                </label>
+              </div>&nbsp;&nbsp;
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" formControlName="g"
+                  value="female">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Female
+                </label>
+              </div>
+            </div>
+
+
+          </div>
+          <button type="submit" [disabled]="loadform.invalid" style="float: right;" class="btn btn-primary"
+            data-bs-dismiss="modal">Add Member</button>
+
+          <button type="button" class="btn btn-secondary" (click)="closeForm()"
+            style="float: right; margin-right: 10px;" data-bs-dismiss="modal">Close</button> &nbsp;
+
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

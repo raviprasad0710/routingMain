@@ -1,0 +1,14 @@
+<h2>Servers page</h2><br>
+
+<!-- <button class="btn btn-primary" (click)="onReload()">Reload</button> -->
+<app-childserver (outputPractice)="outputFinal($event)" [practice]="practiceparent" (goingout)="greet($event)"  [product]="anything"  [all]="allParent" [instock]="inStockParent" [outofstock]="outStockParent"></app-childserver>
+<br><br>
+
+
+<input type="text" #a>
+<button (click)="viewchild()">viewchild</button>
+<br>
+
+<a [routerLink]="['/servers',5,'edit']" [queryParams]="{allowedit:'1'}" [fragment]="'loading'">go to edit server</a>  
+
+<button  (click)="loadquery()">query</button>

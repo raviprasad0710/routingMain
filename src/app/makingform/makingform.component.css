@@ -1,0 +1,50 @@
+.a {
+    text-decoration: none;
+}
+
+/* .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+} */
+
+.card {
+
+    background-color:rgba(173, 216, 230, 0.663);
+    ;
+    /* position: relative; */
+}
+
+
+.card:hover {
+    background-color:rgb(160, 209, 225);
+    transform: translate(0, -.9rem);
+    transition: all .15s ease-out;
+}
+
+.head{
+    font-size:x-large;
+    text-align: center;
+}
+
+.icons:hover{
+    cursor: pointer;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #000000; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    }
+    
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    .roww{
+        display: flex;
+    }
+
+

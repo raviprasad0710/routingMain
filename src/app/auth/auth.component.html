@@ -1,0 +1,52 @@
+<!-- <div class="container"> -->
+
+    <div class="alert alert-danger" role="alert" *ngIf="error" style="width:48.5%; text-align: center;">
+        {{error}}
+    </div>
+    <!-- <div class="main-body"> -->
+
+        <form [formGroup]="loginForm">
+            <!-- <div class="row"> -->
+                <!-- <div class="col-xl-12"> -->
+                    <div class="example-form">
+                        <h1 *ngIf="isLoginMode" style="margin-left: 46%"> <b>User Login</b></h1>
+                        <h1 *ngIf="!isLoginMode" style="color: rgb(22, 53, 154);margin-left: 44%"><b>Sign Up Page </b></h1>
+                        <!-- <hr width="100%"> -->
+
+                        <span style="color: red;"
+                            *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid">This is a required
+                            field.</span>
+                        <mat-form-field class="example-full-width" appearance="outline"
+                            style="width: 120%; height: 100%;">
+                            <input matInput placeholder="Enter Email" formControlName="email" [pattern]="this.email">
+                        </mat-form-field>
+                        <span style="color: red;"
+                            *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">This is a
+                            required field.</span>
+                            <span style="color: red;"
+                            *ngIf="loginForm.get('password').touched && loginForm.get('pattern').invalid">This is a
+                            required field.</span>
+
+                        <mat-form-field class="example-full-width" appearance="outline" style="width: 120%;">
+                            <input matInput placeholder="Enter Password" formControlName="password" type="password"
+                                minlength="5">
+                        </mat-form-field>
+                        <br>
+                        <button mat-raised-button style="width: 30%;margin-left: 40%" color="primary" [disabled]="loginForm.invalid"
+                            (click)="login()">{{isLoginMode ? 'Login' : 'Sign Up'}}</button>
+                        &nbsp;<br><br>
+                        <span *ngIf="isLoginMode">Not a member??? <a (click)="onSwitchMode()"
+                                style="color: blue; cursor: pointer;">Sign Up</a></span>
+                        <span *ngIf="!isLoginMode">Already a member!!! <a (click)="onSwitchMode()"
+                                style="color: blue; cursor: pointer;">Login</a></span>
+
+
+
+
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
+        </form>
+    <!-- </div> -->
+
+<!-- </div> -->

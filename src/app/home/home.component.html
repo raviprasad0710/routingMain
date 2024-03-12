@@ -1,0 +1,20 @@
+<h1>Home page</h1>
+<button class="btn btn-primary" (click)="onLoadServers(1)">Go to edit server page</button>&nbsp;
+
+<br><br>
+
+<!-- <input type="text" [value]='name' (input)="onNameChange($event)" > -->
+<!-- <p>name={{name}}</p> -->
+
+<!-- <input type="text" [(ngModel)]="searchText">
+<p>twoway={{searchText}}</p> -->
+
+
+<button class="buttonadd" (click)="onsub()" [disabled]="this.count===0">-</button>
+{{count}}
+<button class="buttonadd" (click)="onadd()" [disabled]="this.count === this.stock">+</button>&nbsp;
+
+
+
+
+
