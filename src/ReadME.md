@@ -1,0 +1,1 @@
+this is a local routing and api handling project using angular 15.
